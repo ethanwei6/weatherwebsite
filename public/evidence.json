@@ -1,0 +1,541 @@
+{
+  "schemaVersion": 1,
+  "project": "DailyWeather",
+  "asOf": "2026-08-18T07:48:30.108238Z",
+  "sourceDescription": "Read-only export of archived S01 journal, exact joins from signal decision to order intent, confirmed fill, token redemption, and reconciled event payout.",
+  "chartNote": "Observed book snapshots only. No continuous or interpolated market path is asserted; settlement value is a separate realized payoff, not a quote.",
+  "pnlNote": "P&L equals reconciled token payout minus confirmed shares \u00d7 fill price minus recorded fee; no gas costs or taxes included.",
+  "cases": [
+    {
+      "id": "s01-49527",
+      "city": "Tokyo, JP",
+      "eventDate": "2026-08-11",
+      "title": "Will the highest temperature in Tokyo be 30\u00b0C on August 11?",
+      "headline": "From signal to reconciled payout",
+      "lesson": "The archived ask was 77\u00a2; the actual fill was 78\u00a2. The NO side later paid $1 per share.",
+      "side": "NO",
+      "marketId": "3435864",
+      "strategyId": "standalone__s01_fv_both_all_ld12",
+      "bucketType": "exact",
+      "evidenceType": "Confirmed live fill; reconciled historical payout",
+      "signalTime": "2026-08-10T06:07:12.849253Z",
+      "featureTime": "2026-08-10T06:04:39.507630Z",
+      "quoteTime": "2026-08-10T06:05:31.234000Z",
+      "modelProbability": 0.9967075378185279,
+      "quotedAsk": 0.77,
+      "quotedBid": 0.76,
+      "grossEdge": 0.22670753781852793,
+      "leadDays": 1,
+      "fillTime": "2026-08-10T06:09:35.449953Z",
+      "fillPrice": 0.78,
+      "shares": 5.0,
+      "fee": 0.0429,
+      "cost": 3.9429,
+      "payout": 5.0,
+      "pnl": 1.0571,
+      "outcome": "win",
+      "settlementValue": 1.0,
+      "settlementTime": "2026-08-11T18:06:15.043702Z",
+      "redemptionTime": "2026-08-11T18:06:11.189540Z",
+      "station": "RJTT",
+      "sources": [
+        "Open-Meteo Best Match",
+        "ECMWF forecast via Open-Meteo",
+        "GFS ensemble via Open-Meteo",
+        "GFS Global via Open-Meteo"
+      ],
+      "forecastMean": null,
+      "residualSigma": null,
+      "forecastDetailNote": "The ledger preserves source provenance and the final model probability. This export does not reconstruct per-forecast means or residual spreads.",
+      "observations": [
+        {
+          "time": "2026-08-09T06:06:07.034000Z",
+          "ask": 0.81,
+          "bid": 0.78,
+          "modelProbability": 0.8864977980371636,
+          "sequence": 46632
+        },
+        {
+          "time": "2026-08-09T12:07:14.038000Z",
+          "ask": 0.82,
+          "bid": 0.81,
+          "modelProbability": 0.8864977980371636,
+          "sequence": 47447
+        },
+        {
+          "time": "2026-08-09T18:04:28.002000Z",
+          "ask": 0.83,
+          "bid": 0.8,
+          "modelProbability": 0.9797837397372549,
+          "sequence": 48068
+        },
+        {
+          "time": "2026-08-10T00:04:12.881000Z",
+          "ask": 0.79,
+          "bid": 0.78,
+          "modelProbability": null,
+          "sequence": 48605
+        },
+        {
+          "time": "2026-08-10T06:05:31.234000Z",
+          "ask": 0.77,
+          "bid": 0.76,
+          "modelProbability": 0.9967075378185279,
+          "sequence": 49450
+        },
+        {
+          "time": "2026-08-10T12:08:24.579000Z",
+          "ask": 0.75,
+          "bid": 0.74,
+          "modelProbability": 0.9971242646241609,
+          "sequence": 50274
+        }
+      ],
+      "evidence": {
+        "signalSequence": 49450,
+        "intentSequence": 49524,
+        "fillSequence": 49527,
+        "redemptionSequence": 52390,
+        "settlementSequence": 52391
+      }
+    },
+    {
+      "id": "s01-42421",
+      "city": "San Francisco, CA",
+      "eventDate": "2026-08-08",
+      "title": "Will the highest temperature in San Francisco be 67\u00b0F or below on August 8?",
+      "headline": "A rare tail pays out",
+      "lesson": "A YES contract at 5\u00a2 won. The adjacent San Francisco loss shows why this unusually large payout should not stand in for overall performance.",
+      "side": "YES",
+      "marketId": "3393281",
+      "strategyId": "standalone__s01_fv_both_all_ld12",
+      "bucketType": "below",
+      "evidenceType": "Confirmed live fill; reconciled historical payout",
+      "signalTime": "2026-08-07T18:08:00.177148Z",
+      "featureTime": "2026-08-07T18:06:07.656166Z",
+      "quoteTime": "2026-08-07T18:07:02.730000Z",
+      "modelProbability": 0.8188364826938361,
+      "quotedAsk": 0.05,
+      "quotedBid": 0.02,
+      "grossEdge": 0.7688364826938361,
+      "leadDays": 1,
+      "fillTime": "2026-08-07T18:10:45.618637Z",
+      "fillPrice": 0.05,
+      "shares": 32.0,
+      "fee": 0.076,
+      "cost": 1.676,
+      "payout": 32.0,
+      "pnl": 30.324,
+      "outcome": "win",
+      "settlementValue": 1.0,
+      "settlementTime": "2026-08-09T12:05:04.508440Z",
+      "redemptionTime": "2026-08-09T12:05:01.263161Z",
+      "station": "KSFO",
+      "sources": [
+        "Open-Meteo Best Match",
+        "ECMWF forecast via Open-Meteo",
+        "GFS ensemble via Open-Meteo",
+        "GFS Global via Open-Meteo"
+      ],
+      "forecastMean": null,
+      "residualSigma": null,
+      "forecastDetailNote": "The ledger preserves source provenance and the final model probability. This export does not reconstruct per-forecast means or residual spreads.",
+      "observations": [
+        {
+          "time": "2026-08-07T06:04:55.892000Z",
+          "ask": 0.02,
+          "bid": 0.01,
+          "modelProbability": 0.1043518855384485,
+          "sequence": 41407
+        },
+        {
+          "time": "2026-08-07T18:07:02.730000Z",
+          "ask": 0.05,
+          "bid": 0.02,
+          "modelProbability": 0.8188364826938361,
+          "sequence": 42211
+        },
+        {
+          "time": "2026-08-08T00:05:28.967000Z",
+          "ask": 0.07,
+          "bid": 0.04,
+          "modelProbability": 0.9333125448213909,
+          "sequence": 42767
+        },
+        {
+          "time": "2026-08-08T06:05:49.821000Z",
+          "ask": 0.09,
+          "bid": 0.06,
+          "modelProbability": 0.7756730361038968,
+          "sequence": 43453
+        }
+      ],
+      "evidence": {
+        "signalSequence": 42211,
+        "intentSequence": 42418,
+        "fillSequence": 42421,
+        "redemptionSequence": 46712,
+        "settlementSequence": 46713
+      }
+    },
+    {
+      "id": "s01-40351",
+      "city": "San Francisco, CA",
+      "eventDate": "2026-08-07",
+      "title": "Will the highest temperature in San Francisco be 65\u00b0F or below on August 7?",
+      "headline": "A large estimated edge can lose",
+      "lesson": "The model assigned 74.7% to a tail priced at 1\u00a2. The contract still settled at zero, a useful example of why model confidence is not proof.",
+      "side": "YES",
+      "marketId": "3373089",
+      "strategyId": "standalone__s01_fv_both_all_ld12",
+      "bucketType": "below",
+      "evidenceType": "Confirmed live fill; reconciled historical payout",
+      "signalTime": "2026-08-06T18:07:14.126681Z",
+      "featureTime": "2026-08-06T18:05:19.550645Z",
+      "quoteTime": "2026-08-06T18:06:05.035000Z",
+      "modelProbability": 0.7473013636812887,
+      "quotedAsk": 0.01,
+      "quotedBid": 0.005,
+      "grossEdge": 0.7373013636812887,
+      "leadDays": 1,
+      "fillTime": "2026-08-06T18:09:26.929235Z",
+      "fillPrice": 0.01,
+      "shares": 123.0,
+      "fee": 0.06088,
+      "cost": 1.29088,
+      "payout": 0.0,
+      "pnl": -1.29088,
+      "outcome": "loss",
+      "settlementValue": 0.0,
+      "settlementTime": "2026-08-08T12:06:55.871261Z",
+      "redemptionTime": "2026-08-08T12:06:21.006130Z",
+      "station": "KSFO",
+      "sources": [
+        "Open-Meteo Best Match",
+        "ECMWF forecast via Open-Meteo",
+        "GFS ensemble via Open-Meteo",
+        "GFS Global via Open-Meteo"
+      ],
+      "forecastMean": null,
+      "residualSigma": null,
+      "forecastDetailNote": "The ledger preserves source provenance and the final model probability. This export does not reconstruct per-forecast means or residual spreads.",
+      "observations": [
+        {
+          "time": "2026-08-06T06:06:10.376000Z",
+          "ask": 0.01,
+          "bid": 0.005,
+          "modelProbability": 0.06332504374012149,
+          "sequence": 38504
+        },
+        {
+          "time": "2026-08-06T12:06:58.033000Z",
+          "ask": 0.01,
+          "bid": 0.005,
+          "modelProbability": 0.5666592293688458,
+          "sequence": 39354
+        },
+        {
+          "time": "2026-08-06T18:06:05.035000Z",
+          "ask": 0.01,
+          "bid": 0.005,
+          "modelProbability": 0.7473013636812887,
+          "sequence": 40142
+        },
+        {
+          "time": "2026-08-07T00:05:12Z",
+          "ask": 0.029,
+          "bid": 0.01,
+          "modelProbability": 0.6659244576171457,
+          "sequence": 40705
+        },
+        {
+          "time": "2026-08-07T06:04:36.708000Z",
+          "ask": 0.017,
+          "bid": 0.003,
+          "modelProbability": 0.5154914473126788,
+          "sequence": 41378
+        }
+      ],
+      "evidence": {
+        "signalSequence": 40142,
+        "intentSequence": 40348,
+        "fillSequence": 40351,
+        "redemptionSequence": 43870,
+        "settlementSequence": 43875
+      }
+    },
+    {
+      "id": "s01-6867",
+      "city": "Moscow, RU",
+      "eventDate": "2026-07-26",
+      "title": "Will the highest temperature in Moscow be 19\u00b0C or below on July 26?",
+      "headline": "The quote is not the fill",
+      "lesson": "The archived ask was 17\u00a2; the confirmed fill was 20\u00a2. The YES contract later paid zero.",
+      "side": "YES",
+      "marketId": "3076766",
+      "strategyId": "standalone__s01_fv_both_all_ld12",
+      "bucketType": "below",
+      "evidenceType": "Confirmed live fill; reconciled historical payout",
+      "signalTime": "2026-07-25T00:04:39.869508Z",
+      "featureTime": "2026-07-25T00:03:01.589752Z",
+      "quoteTime": "2026-07-25T00:03:54.459000Z",
+      "modelProbability": 0.9427034263408842,
+      "quotedAsk": 0.17,
+      "quotedBid": 0.14,
+      "grossEdge": 0.7727034263408842,
+      "leadDays": 1,
+      "fillTime": "2026-07-25T00:05:37.650099Z",
+      "fillPrice": 0.2,
+      "shares": 5.0,
+      "fee": 0.04,
+      "cost": 1.04,
+      "payout": 0.0,
+      "pnl": -1.04,
+      "outcome": "loss",
+      "settlementValue": 0.0,
+      "settlementTime": "2026-07-27T00:05:42.285031Z",
+      "redemptionTime": "2026-07-27T00:04:28.487592Z",
+      "station": "UUEE",
+      "sources": [
+        "Open-Meteo Best Match",
+        "ECMWF forecast via Open-Meteo",
+        "GFS ensemble via Open-Meteo",
+        "GFS Global via Open-Meteo"
+      ],
+      "forecastMean": null,
+      "residualSigma": null,
+      "forecastDetailNote": "The ledger preserves source provenance and the final model probability. This export does not reconstruct per-forecast means or residual spreads.",
+      "observations": [
+        {
+          "time": "2026-07-24T06:04:53.462000Z",
+          "ask": 0.08,
+          "bid": 0.02,
+          "modelProbability": 0.002692125920053312,
+          "sequence": 4394
+        },
+        {
+          "time": "2026-07-24T12:05:02.129000Z",
+          "ask": 0.03,
+          "bid": 0.02,
+          "modelProbability": 0.002779437300682822,
+          "sequence": 5276
+        },
+        {
+          "time": "2026-07-24T18:06:30.259000Z",
+          "ask": 0.03,
+          "bid": 0.02,
+          "modelProbability": 0.02870147242121076,
+          "sequence": 6062
+        },
+        {
+          "time": "2026-07-25T00:03:54.459000Z",
+          "ask": 0.17,
+          "bid": 0.14,
+          "modelProbability": 0.9427034263408842,
+          "sequence": 6621
+        },
+        {
+          "time": "2026-07-25T06:05:09.466000Z",
+          "ask": 0.23,
+          "bid": 0.21,
+          "modelProbability": 0.7416421479807989,
+          "sequence": 7255
+        },
+        {
+          "time": "2026-07-25T12:14:50.486000Z",
+          "ask": 0.18,
+          "bid": 0.16,
+          "modelProbability": 0.004822230096821016,
+          "sequence": 8114
+        },
+        {
+          "time": "2026-07-25T18:06:00.002000Z",
+          "ask": 0.12,
+          "bid": 0.11,
+          "modelProbability": 0.004948042670902597,
+          "sequence": 8841
+        }
+      ],
+      "evidence": {
+        "signalSequence": 6621,
+        "intentSequence": 6864,
+        "fillSequence": 6867,
+        "redemptionSequence": 11033,
+        "settlementSequence": 11042
+      }
+    },
+    {
+      "id": "s01-52980",
+      "city": "Chicago, IL",
+      "eventDate": "2026-08-12",
+      "title": "Will the highest temperature in Chicago be between 82-83\u00b0F on August 12?",
+      "headline": "When confidence misses",
+      "lesson": "The model assigned about 99.7% to NO, but the purchased side lost. Calibration and tail risk matter even when many small trades win.",
+      "side": "NO",
+      "marketId": "3504732",
+      "strategyId": "standalone__s01_fv_both_all_ld12",
+      "bucketType": "exact",
+      "evidenceType": "Confirmed live fill; reconciled historical payout",
+      "signalTime": "2026-08-11T18:09:11.594346Z",
+      "featureTime": "2026-08-11T18:06:37.855117Z",
+      "quoteTime": "2026-08-11T18:07:58.303000Z",
+      "modelProbability": 0.9968697676478202,
+      "quotedAsk": 0.74,
+      "quotedBid": 0.73,
+      "grossEdge": 0.2568697676478202,
+      "leadDays": 1,
+      "fillTime": "2026-08-11T18:09:50.609010Z",
+      "fillPrice": 0.74,
+      "shares": 6.0,
+      "fee": 0.05772,
+      "cost": 4.49772,
+      "payout": 0.0,
+      "pnl": -4.49772,
+      "outcome": "loss",
+      "settlementValue": 0.0,
+      "settlementTime": "2026-08-13T18:03:55.025572Z",
+      "redemptionTime": "2026-08-13T18:02:42.014156Z",
+      "station": "KMDW",
+      "sources": [
+        "Open-Meteo Best Match",
+        "ECMWF forecast via Open-Meteo",
+        "GFS ensemble via Open-Meteo",
+        "GFS Global via Open-Meteo"
+      ],
+      "forecastMean": null,
+      "residualSigma": null,
+      "forecastDetailNote": "The ledger preserves source provenance and the final model probability. This export does not reconstruct per-forecast means or residual spreads.",
+      "observations": [
+        {
+          "time": "2026-08-11T12:08:13.538000Z",
+          "ask": 0.67,
+          "bid": 0.65,
+          "modelProbability": 0.9983438237731312,
+          "sequence": 51618
+        },
+        {
+          "time": "2026-08-11T18:07:58.303000Z",
+          "ask": 0.74,
+          "bid": 0.73,
+          "modelProbability": 0.9968697676478202,
+          "sequence": 52440
+        },
+        {
+          "time": "2026-08-12T00:04:32.236000Z",
+          "ask": 0.67,
+          "bid": 0.66,
+          "modelProbability": 0.9954754781215491,
+          "sequence": 53061
+        }
+      ],
+      "evidence": {
+        "signalSequence": 52440,
+        "intentSequence": 52977,
+        "fillSequence": 52980,
+        "redemptionSequence": 56464,
+        "settlementSequence": 56473
+      }
+    },
+    {
+      "id": "s01-17657",
+      "city": "London, GB",
+      "eventDate": "2026-07-31",
+      "title": "Will the highest temperature in London be 27\u00b0C on July 31?",
+      "headline": "A standard NO entry",
+      "lesson": "A high estimated NO probability passed the exact-bucket gates. Five shares later paid $5 after a confirmed entry at 89\u00a2.",
+      "side": "NO",
+      "marketId": "3198282",
+      "strategyId": "standalone__s01_fv_both_all_ld12",
+      "bucketType": "exact",
+      "evidenceType": "Confirmed live fill; reconciled historical payout",
+      "signalTime": "2026-07-29T12:09:18.745934Z",
+      "featureTime": "2026-07-29T12:07:11.933475Z",
+      "quoteTime": "2026-07-29T12:07:35.421000Z",
+      "modelProbability": 0.9975936512352774,
+      "quotedAsk": 0.89,
+      "quotedBid": 0.88,
+      "grossEdge": 0.10759365123527742,
+      "leadDays": 2,
+      "fillTime": "2026-07-29T12:10:24.436759Z",
+      "fillPrice": 0.89,
+      "shares": 5.0,
+      "fee": 0.02447,
+      "cost": 4.47447,
+      "payout": 5.0,
+      "pnl": 0.52553,
+      "outcome": "win",
+      "settlementValue": 1.0,
+      "settlementTime": "2026-08-01T00:06:15.940481Z",
+      "redemptionTime": "2026-08-01T00:05:43.273553Z",
+      "station": "EGLL",
+      "sources": [
+        "Open-Meteo Best Match",
+        "ECMWF forecast via Open-Meteo",
+        "GFS ensemble via Open-Meteo",
+        "GFS Global via Open-Meteo"
+      ],
+      "forecastMean": null,
+      "residualSigma": null,
+      "forecastDetailNote": "The ledger preserves source provenance and the final model probability. This export does not reconstruct per-forecast means or residual spreads.",
+      "observations": [
+        {
+          "time": "2026-07-29T06:04:47.393000Z",
+          "ask": 0.97,
+          "bid": 0.7,
+          "modelProbability": 0.9964487992471558,
+          "sequence": 16197
+        },
+        {
+          "time": "2026-07-29T12:07:35.421000Z",
+          "ask": 0.89,
+          "bid": 0.88,
+          "modelProbability": 0.9975936512352774,
+          "sequence": 17105
+        },
+        {
+          "time": "2026-07-29T18:04:29.145000Z",
+          "ask": 0.95,
+          "bid": 0.92,
+          "modelProbability": 0.9970073405549507,
+          "sequence": 17867
+        },
+        {
+          "time": "2026-07-30T00:04:20.113000Z",
+          "ask": 0.95,
+          "bid": 0.94,
+          "modelProbability": 0.9922257241441832,
+          "sequence": 18487
+        },
+        {
+          "time": "2026-07-30T06:06:17.769000Z",
+          "ask": 0.97,
+          "bid": 0.96,
+          "modelProbability": 0.9936216502802216,
+          "sequence": 19055
+        },
+        {
+          "time": "2026-07-30T12:07:56.803000Z",
+          "ask": 0.96,
+          "bid": 0.95,
+          "modelProbability": 0.9922257241441832,
+          "sequence": 19942
+        },
+        {
+          "time": "2026-07-30T18:03:11.580000Z",
+          "ask": 0.95,
+          "bid": 0.94,
+          "modelProbability": 0.9867097511105818,
+          "sequence": 20686
+        }
+      ],
+      "evidence": {
+        "signalSequence": 17105,
+        "intentSequence": 17654,
+        "fillSequence": 17657,
+        "redemptionSequence": 24019,
+        "settlementSequence": 24024
+      }
+    }
+  ],
+  "selectionNote": "Six deliberately selected explanatory examples, including wins and losses; not a representative performance sample."
+}
