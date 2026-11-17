@@ -43,6 +43,7 @@ The figures are historical records, not a live account balance or a simulation.
 - `public/evidence.json` contains six selected historical trade examples and sparse quote observations. These illustrate the process and are not a representative performance sample.
 - `public/model-evaluation.json` contains the historical model-family validation. Forecast evaluation, market-payout evaluation, and executed-trade results use different populations.
 - `/postmortem` analyzes the pre-peak decline, the largest winner, later drawdown, calendar entry-week results, probability calibration and recorded execution costs. It separates observed outcomes, possible causes, and proposed validation experiments. Retrospective profitable windows do not establish a durable trading edge. The author's decision to continue a small personal-capital experiment is presented separately from the evidence and future controls.
+- The postmortem also compares calendar entry halves, groups P&L into 25 contract weather-date totals, and removes the largest 1, 5 and 10 winners as concentration checks. Its conventional t interval is an assumption-dependent reference, not a verified confidence bound. The archive lacks the complete decision set needed to test selection with shuffled labels; no permutation p-value is reported.
 - Gas, taxes, and costs absent from the original trading-fee records are excluded. The displayed figures are a selected position cohort, not whole-account returns.
 
 The repository contains the sanitized data displayed by the website. Raw ledgers, private operating files, wallet addresses, order/token/transaction identifiers, signing keys, environment files, and trading integrations are excluded. Source digests and journal sequence references remain as provenance.
@@ -53,6 +54,7 @@ The repository contains the sanitized data displayed by the website. Raw ledgers
 - `components/` — Navigation, model diagram and calculator, trade explorer, and equations.
 - `data/reconciled-results.ts` — Shared derivation of the displayed 242-position subset and reconciliation timeline.
 - `data/drawdown-analysis.ts` — Drawdowns, aligned winner-exclusion curve, entry-week cohorts, calibration and cost attribution.
+- `data/edge-analysis.ts` — Date-grouped variation, a fixed calendar midpoint split, and winner-removal sensitivity.
 - `tests/` — Checks for reconciliation, drawdowns, exclusions, weighting, calendar cohorts and full-archive accounting.
 - `public/` — Downloadable historical data, favicon, and social preview image.
 

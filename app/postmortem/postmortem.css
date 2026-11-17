@@ -4,6 +4,8 @@
 .pm-scope { border-left: var(--pm-rule); padding-left: 24px; color: var(--muted); font-size: 13px; }
 .pm-scope p + p { margin-top: 8px; }
 .pm-page strong { color: var(--ink); }
+.pm-page [id] { scroll-margin-top: 24px; }
+.pm-jump-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-bottom: 24px; font-size: 13px; }
 .pm-figure { border-top: 2px solid var(--ink); padding-top: 16px; }
 .pm-figure-head, .pm-section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
 .pm-page h2 { font-size: 26px; }
@@ -49,6 +51,26 @@
 .pm-table-wrap { overflow-x: auto; margin-top: 20px; }
 .pm-table-wrap .data-table { min-width: 560px; }
 .pm-table-wrap .data-table th[scope="row"] { color: var(--ink); }
+.pm-table-wrap .pm-halves { min-width: 0; }
+.pm-detail { margin-top: 20px; border-top: var(--pm-rule); color: var(--muted); font-size: 13px; }
+.pm-detail summary { padding-block: 12px; color: var(--accent); }
+.pm-detail p { max-width: 104ch; }
+.pm-detail p + p, .pm-detail .pm-table-wrap + p { margin-top: 12px; }
+.pm-detail .pm-table-wrap { margin-top: 12px; }
+.pm-uncertainty { margin-top: 24px; padding: 20px 0; border-top: var(--pm-rule); border-bottom: var(--pm-rule); }
+.pm-uncertainty-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px 24px; }
+.pm-uncertainty-head code { color: var(--muted); font-size: 13px; }
+.pm-interval { position: relative; height: 104px; margin: 12px 24px 4px; }
+.pm-interval-axis { position: absolute; inset: 54px 0 auto; border-top: 1px solid var(--line); }
+.pm-interval-zero { position: absolute; top: 24px; height: 52px; border-left: 1px dashed var(--muted); }
+.pm-interval-range { position: absolute; top: 54px; border-top: 3px solid var(--accent); }
+.pm-interval-range::before, .pm-interval-range::after { position: absolute; top: -9px; height: 15px; border-left: 2px solid var(--accent); content: ""; }
+.pm-interval-range::before { left: 0; }
+.pm-interval-range::after { right: 0; }
+.pm-interval-mean { position: absolute; top: 51px; width: 9px; height: 9px; transform: translateX(-50%); background: var(--ink); border-radius: 50%; }
+.pm-interval-mean b { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); font: 16px var(--mono); white-space: nowrap; }
+.pm-interval-tick { position: absolute; top: 82px; transform: translateX(-50%); font: 12px var(--mono); color: var(--muted); white-space: nowrap; }
+.pm-uncertainty figcaption { max-width: 104ch; color: var(--muted); font-size: 13px; }
 .pm-small { color: var(--muted); font-size: 13px; }
 .pm-findings { margin-top: 16px; }
 .pm-finding { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 32px; padding-block: 20px; border-bottom: var(--pm-rule); }
