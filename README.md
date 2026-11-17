@@ -1,6 +1,6 @@
 # DailyWeather
 
-A technical portfolio for weather prediction-market research. Four pages present cash-reconciled performance, a model-to-trade flow diagram, individual trade evidence, and the mathematical specification and validation results.
+A technical portfolio for weather prediction-market research. Five pages present cash-reconciled performance, a drawdown postmortem, a model-to-trade flow diagram, individual trade evidence, and the mathematical specification and validation results.
 
 This repository is a standalone Next.js application. It runs without API keys, a database, a wallet connection, or the Sites hosting service.
 
@@ -20,7 +20,7 @@ npm run build
 npm start
 ```
 
-Run `npm run typecheck` to check TypeScript.
+Run `npm run typecheck` to check TypeScript and `npm test` to verify the postmortem calculations against the archived positions.
 
 ## Deploy on Vercel
 
@@ -42,15 +42,18 @@ The figures are historical records, not a live account balance or a simulation.
 - **15 additional positions without archived cash reconciliation are excluded from that display**. The complete downloadable `public/results.json` retains all **257** historical positions and their settlement-value accounting. Methodology explains the distinction and the later verification snapshot.
 - `public/evidence.json` contains six selected historical trade examples and sparse quote observations. These illustrate the process and are not a representative performance sample.
 - `public/model-evaluation.json` contains the historical model-family validation. Forecast evaluation, market-payout evaluation, and executed-trade results use different populations.
+- `/postmortem` analyzes the pre-peak decline, the largest winner, later drawdown, calendar entry-week results, probability calibration and recorded execution costs. It separates observed outcomes, possible causes, and proposed validation experiments. Retrospective profitable windows do not establish a durable trading edge. The author's decision to continue a small personal-capital experiment is presented separately from the evidence and future controls.
 - Gas, taxes, and costs absent from the original trading-fee records are excluded. The displayed figures are a selected position cohort, not whole-account returns.
 
 The repository contains the sanitized data displayed by the website. Raw ledgers, private operating files, wallet addresses, order/token/transaction identifiers, signing keys, environment files, and trading integrations are excluded. Source digests and journal sequence references remain as provenance.
 
 ## Source layout
 
-- `app/` — Performance, Model & Trader, Trades, and Methodology routes and styles.
+- `app/` — Performance, Postmortem, Model & Trader, Trades, and Methodology routes and styles.
 - `components/` — Navigation, model diagram and calculator, trade explorer, and equations.
 - `data/reconciled-results.ts` — Shared derivation of the displayed 242-position subset and reconciliation timeline.
+- `data/drawdown-analysis.ts` — Drawdowns, aligned winner-exclusion curve, entry-week cohorts, calibration and cost attribution.
+- `tests/` — Checks for reconciliation, drawdowns, exclusions, weighting, calendar cohorts and full-archive accounting.
 - `public/` — Downloadable historical data, favicon, and social preview image.
 
 The separate [MultiagentWeather research repository](https://github.com/ethanwei6/MultiagentWeather) contains the public research package. This repository contains the website only and has no order-placement or redemption capability.

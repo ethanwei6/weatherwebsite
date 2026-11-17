@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 
 const pages = [
   { href: "/", label: "Performance" },
+  { href: "/postmortem", label: "Postmortem" },
   { href: "/model", label: "Model & Trader" },
   { href: "/trades", label: "Trades" },
   { href: "/methodology", label: "Methodology" },

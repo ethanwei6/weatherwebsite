@@ -140,8 +140,9 @@ function Calibration() {
 
 export default function Home() {
   return <div className="pf-page">
-    <header className="page-heading"><div><h1>Performance</h1><p>242 cash-reconciled S01 positions in daily high-temperature markets, July–August 2026.</p></div></header>
+    <header className="page-heading"><div><h1>Performance</h1><p>242 cash-reconciled S01 positions in daily high-temperature markets, July–August 2026.</p></div><a className="outline-link" href="/postmortem">Read the drawdown analysis <ArrowRight size={14} aria-hidden="true"/></a></header>
     <div className="pf-lead"><PerformanceChart/><ExecutionSummary/></div>
+    <section className="pf-postmortem" aria-labelledby="drawdown-review-title"><div><h2 id="drawdown-review-title">What the drawdown revealed</h2><p>The cash-reconciled curve fell <strong>{usd(peak.cumulativePnlUsd - metrics.netPnlUsd)}</strong> from peak to close. Earlier losses and one unusually large winner make the peak an incomplete measure of performance.</p></div><div><p>I recognized the deterioration. With a small personal stake, I chose to continue collecting execution and settlement data to investigate what was going wrong.</p><a href="/postmortem">Evidence, possible causes, and next experiments <ArrowRight size={14} aria-hidden="true"/></a></div></section>
     <div className="pf-analysis"><Attribution/><Calibration/></div>
     <section className="pf-validation"><div><h2>Out-of-sample validation</h2><p>The model improved on the forecast baseline for weather labels. It missed both geographic holdout thresholds and scored worse than the midpoint on market payouts.</p></div><a href="/methodology#validation">View model audit <ArrowRight size={14} aria-hidden="true"/></a></section>
   </div>;
